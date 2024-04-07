@@ -60,10 +60,6 @@ body {
   margin-left: 2.5rem;
 }
 
-#check {
-  display: none;
-}
-
 .btns i {
   font-size: 2.8rem;
   color: var(--white);
@@ -97,10 +93,12 @@ body {
     background-color: var(--secondary-color);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    transform: translateY(-300px);
   }
 
-  #check:checked ~ .nav-bar {
+  .nav-bar.open {
     display: block;
+    transform: translateY(0);
   }
 
   .nav-bar a {
@@ -108,10 +106,5 @@ body {
     font-size: 1.1rem;
     margin: 1.5rem 0;
     text-align: center;
-    transform: translateY(-200px);
-  }
-
-  #check:checked ~ .nav-bar a {
-    transform: translateY(0);
   }
 }
