@@ -10,21 +10,22 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <div class="nav-logo">
-          <a href="#">
-            <img src="images/logo.jpg" alt="logo" />
-          </a>
-        </div>
-        <div class="nav-menu-btn" id="menu-btn">
-          <i class="material-symbols-outlined">menu</i>
-        </div>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#menu">Meny</a></li>
-          <li><a href="#contact">Kontakt oss</a></li>
-          <li><a href="#about">Om oss</a></li>
-        </ul>
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="images/logo.jpg" alt="logo" />
+      </a>
+
+      <input type="checkbox" id="check" />
+      <label for="check" class="btns">
+        <i class="material-symbols-outlined" id="menu-btn">menu</i>
+        <i class="material-symbols-outlined" id="close-btn">close</i>
+      </label>
+
+      <nav class="nav-bar" id="nav-bar">
+        <a href="#menu">Meny</a>
+        <a href="#about">Om oss</a>
+        <a href="#gallery">Galleri</a>
+        <a href="#contact">Kontakt oss</a>
       </nav>
     </header>
 
