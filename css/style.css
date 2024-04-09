@@ -53,9 +53,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .logo img {
-  position: absolute;
-  top: 0;
-  left: 2rem;
   max-height: var(--nav-bar-height);
   min-height: var(--nav-bar-min-height);
 }
@@ -83,7 +80,7 @@ body::-webkit-scrollbar-thumb {
 
 .sidebar-btn {
   position: absolute;
-  right: 1rem;
+  left: 5%;
   display: none;
   cursor: pointer;
 }
