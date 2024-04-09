@@ -3,108 +3,159 @@
 
 :root {
   --primary-color: #000000;
-  --secondary-color: rgb(127, 118, 17);
+  --secondary-color: #c69b3d;
   --tertiary-color: beige;
   --black: #000000;
   --white: #ffffff;
-  --max-width: 1200px;
-  --header-font-1: "Roboto", sans-serif;
-  --header-font-2: "Open Sans", sans-serif;
-  --header-font-3: "Montserrat", sans-serif;
+  --lean-white: #fefefe;
+  --font-1: "Roboto", sans-serif;
+  --font-2: "Open Sans", sans-serif;
+  --font-3: "Montserrat", sans-serif;
+  --nav-bar-height: 8vh;
+  --nav-bar-min-height: 3rem;
+  font-size: 16px;
+  font-family: var(--font-1);
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: var(--header-font-1);
 }
 
 body {
-  min-height: 100vh;
-  background-color: beige;
+  color: var(--black);
+  background-color: var(--tertiary-color);
 }
 
-.header {
-  user-select: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4rem;
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+  background: var(--tertiary-color);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+}
+
+.nav-bar {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: var(--nav-bar-height);
+  min-height: var(--nav-bar-min-height);
   width: 100%;
-  padding: 1.3rem 10%;
   background-color: var(--primary-color);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: 100;
+  user-select: none;
 }
 
 .logo img {
   position: absolute;
   top: 0;
-  left: 0;
-  font-size: 2rem;
+  left: 2rem;
+  max-height: var(--nav-bar-height);
+  min-height: var(--nav-bar-min-height);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.nav-links li {
+  list-style: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nav-links a {
+  color: var(--white);
   font-weight: 700;
-  height: 4rem;
+  font-size: 1.25rem;
+  margin-right: 10px;
+  letter-spacing: 1px;
   text-decoration: none;
-  color: var(--white);
 }
 
-.nav-bar a {
-  font-size: 1.15rem;
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 2.5rem;
-}
-
-.btns i {
-  font-size: 2.8rem;
-  color: var(--white);
-  cursor: pointer;
+.sidebar-btn {
+  position: absolute;
+  right: 1rem;
   display: none;
+  cursor: pointer;
 }
 
-@media (min-width: 768px) {
-  .header {
-    padding: 1.3rem 5%;
-  }
-  .btns {
-    display: none;
-  }
+.sidebar-btn div {
+  width: 28px;
+  height: 3px;
+  margin: 5px;
+  background-color: var(--white);
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  #menu-btn {
-    display: inline-flex;
-  }
-  #close-btn {
-    display: none;
+@media (max-width: 601px) {
+  body {
+    overflow-x: hidden;
   }
 
-  .nav-bar {
-    display: none;
+  .nav-links {
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    right: 0;
+    top: 8vh;
+    height: 92vh;
+    width: 35%;
     background-color: var(--secondary-color);
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transform: translateY(-300px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+  }
+  .nav-links li {
+    opacity: 0;
   }
 
-  .nav-bar.open {
+  .sidebar-btn {
     display: block;
-    transform: translateY(0);
-  }
-
-  .nav-bar a {
-    display: block;
-    font-size: 1.1rem;
-    margin: 1.5rem 0;
-    text-align: center;
   }
 }
+
+.sidebar-activate {
+  transform: translateX(0%);
+  transition: 0.3s ease-in;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle-line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle-line2 {
+  opacity: 0;
+}
+.toggle-line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/*
+#ccb78a
+#040404
+#5e4f39
+#7c7c7c
+#747374
+#2b1c0e
+#2b1c0e
+#2b1c0e
+#2b1c0e
+*/
